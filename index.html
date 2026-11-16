@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CINEMATE — Curated Film & Series Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="cinema-header">
+    <div class="header-wrap">
+      <a href="#" class="brand-logo">CINEMATE</a>
+
+      <div class="search-bar">
+        <input type="search" id="movieSearchInput" placeholder="Search titles via live API (e.g. Dune, Severance, Batman)..." />
+        <button id="searchTriggerBtn">Search</button>
+      </div>
+
+      <nav class="header-tabs">
+        <button class="tab-btn active" data-tab="discover">Discover</button>
+        <button class="tab-btn" data-tab="watchlist">Watchlist (<span id="watchlistCount">0</span>)</button>
+        <button class="tab-btn" data-tab="favorites">Favorites (<span id="favCount">0</span>)</button>
+        <a href="[YOUR PORTFOLIO URL]" target="_blank" rel="noopener" class="portfolio-link">Developer Portfolio →</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="featured-banner" id="featuredBanner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <span class="spotlight-tag">CRITICS' SPOTLIGHT</span>
+      <h1 id="heroTitle">Loading Curated Cinema...</h1>
+      <p id="heroSummary">Fetching live metadata and critic scores.</p>
+      <div class="banner-actions">
+        <button class="btn-gold" id="heroDetailBtn">Inspect Dossier</button>
+        <button class="btn-glass" id="heroWatchlistBtn">+ Add to Watchlist</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="cinema-main">
+    <div class="filter-strip">
+      <div class="genre-pills" id="genrePills">
+        <button class="genre-pill active" data-genre="All">All Genres</button>
+        <button class="genre-pill" data-genre="Drama">Drama</button>
+        <button class="genre-pill" data-genre="Science-Fiction">Sci-Fi</button>
+        <button class="genre-pill" data-genre="Thriller">Thriller</button>
+        <button class="genre-pill" data-genre="Crime">Crime</button>
+        <button class="genre-pill" data-genre="Action">Action</button>
+      </div>
+      <span class="result-counter" id="resultCounter">Showing catalog</span>
+    </div>
+
+    <div class="poster-grid" id="posterGrid"></div>
+  </main>
+
+  <footer class="cinema-footer">
+    <span>Powered by Live REST API &amp; LocalStorage Persistence</span>
+    <span>Designed &amp; Developed by <a href="[YOUR PORTFOLIO URL]" target="_blank" rel="noopener">Jamal Aliyev</a></span>
+  </footer>
+
+  <!-- Film Dossier Modal -->
+  <div class="modal-mask" id="filmModal">
+    <div class="dossier-box">
+      <button class="close-dossier" id="closeFilmModal">✕ Close</button>
+      <div id="dossierContent" class="dossier-grid"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
